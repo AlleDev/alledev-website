@@ -26,21 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/test', tests);
-//app.use('/users', users);
-
-//define pages router
-app.get('/',routes.home);//homepage
-app.get('/register',routes.getRegister);//get register
-app.post('/register',routes.postRegister);//post register
-app.get('/login',routes.getLogin);//get login
-app.post('/login',routes.postLogin);//post login
-app.get('/about',routes.about);//about
-app.get('/contract',routes.contract);//contract
-app.get('/userhome/:user',routes.userHome);//user home
-app.get('/project/:project',routes.project);//project
-app.get('/newproject',routes.getNewProject);//get new project
-app.post('/newproject',routes.postNewProject);//post new project
-app.get('/profile/:user',routes.privateProfile);//user profile
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
